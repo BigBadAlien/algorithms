@@ -1,0 +1,26 @@
+{
+  "name": "alhorithms",
+  "version": "1.0.0",
+  "description": "Just algorithms",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigBadAlien/algorithms.git"
+  },
+  "author": "Alexandr Ishchenko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/BigBadAlien/algorithms/issues"
+  },
+  "homepage": "https://github.com/BigBadAlien/algorithms#readme"
+}
