@@ -12,7 +12,7 @@ module.exports.СontradictoryParamsError = СontradictoryParamsError;
 /**
  * Get factorial of number
  * @param {!number} value
- * @param {=number} loops
+ * @param {=number} loops Needs for partial fractal calculation.
  * @return {number}
  */
 function getFactorial(value, loops) {
