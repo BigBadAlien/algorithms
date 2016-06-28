@@ -1,11 +1,15 @@
-var getProbability = require('./src/probability').getProbability;
-var IncorrectSampleError = require('./src/probability').IncorrectSampleError;
-var IncorrectChoiceError = require('./src/probability').IncorrectChoiceError;
-var NegativeParamError = require('./src/probability').NegativeParamError;
+var getProbability = require('../src/probability').getProbability;
+var IncorrectSampleError = require('../src/probability').IncorrectSampleError;
+var IncorrectChoiceError = require('../src/probability').IncorrectChoiceError;
+var NegativeParamError = require('../src/probability').NegativeParamError;
 var expect = require('chai').expect;
 
 describe("Probability", function () {
-  describe("of assignment values in sample", function () {
+  describe("with length of sample 6 and sample space 36 expected 1947792 result variants", function () {
+    //@TODO getCombinationsCount
+  });
+
+  describe("assignment values in sample", function () {
     it("if you choose 1 values of the 100, expected probability of assigning is 0.01", function () {
       expect(getProbability(100, 1)).to.equal(0.01);
     });
