@@ -4,10 +4,9 @@ module.exports.NegativeValueImpossible = NegativeValueImpossible;
 /**
  * Get factorial of number
  * @param {!number} value
- * @param {=number} count
- * @returns {number}
+ * @return {number}
  */
-function getFactorial(value, count) {
+function getFactorial(value) {
   if (value < 0) {
     throw NegativeValueImpossible;
   }
@@ -17,5 +16,5 @@ function getFactorial(value, count) {
   else {
     return (value * getFactorial(value - 1));
   }
-};
+}
 module.exports.getFactorial = getFactorial;
