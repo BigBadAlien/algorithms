@@ -18,7 +18,7 @@ describe("Math", function () {
     it("Result with value 36 with 6 loops is 36*35*34*33*32*31", function () {
       expect(getFactorial(36, 6)).to.equal(36 * 35 * 34 * 33 * 32 * 31);
     });
-    //
+
     it("Result with value 79 with 4 loops is 1402410240", function () {
       expect(getFactorial(79, 4)).to.equal(79 * 78 * 77 * 76);
     });
