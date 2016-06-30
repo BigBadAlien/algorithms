@@ -8,10 +8,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/_mocha",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",
