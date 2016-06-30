@@ -13,80 +13,85 @@ var OnlyIntegerAvailableError = new Error();
 module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
 
 /**
- * Get probability by terms.
- * @param {!number} sampleSpace
- * @param {!number} choice
- * @param {?number} sample
+ * Get probability of outcome by terms.
+ * For example probability of outcome with 2 elements out of 36 with sample size 5 is 0.35714285714285715.
+ * @param {!number} allElementsQuantity
+ * @param {!number} outcomeElementsQuantity
+ * @param {?number} sampleElementsQuantity
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeParamError}
  * @throws {СontradictoryParamsError}
  * @return {number}
  */
-function getProbability(sampleSpace, choice, sample) {
-  if (!isInteger(sampleSpace) || !isInteger(choice)) {
+function getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElementsQuantity) {
+  if (!isInteger(allElementsQuantity) || !isInteger(outcomeElementsQuantity)) {
     throw OnlyIntegerAvailableError;
   }
 
-  if (sampleSpace < 0 ||
-    choice < 0 ||
-    (isInteger(sample) && sample < 0)) {
+  if (allElementsQuantity < 0 ||
+    outcomeElementsQuantity < 0 ||
+    (isInteger(sampleElementsQuantity) && sampleElementsQuantity < 0)) {
     throw NegativeParamError;
   }
 
-  if (choice > sampleSpace) {
+  if (outcomeElementsQuantity > allElementsQuantity) {
     throw СontradictoryParamsError;
   }
 
-  if (isInteger(sample) && (sample < choice || sample > sampleSpace)) {
+  if (isInteger(sampleElementsQuantity) &&
+    (sampleElementsQuantity < outcomeElementsQuantity || sampleElementsQuantity > allElementsQuantity)) {
     throw СontradictoryParamsError;
   }
 
-  if (sampleSpace === 0 ||
-    choice === 0 ||
-    sample === 0) {
+  if (allElementsQuantity === 0 ||
+    outcomeElementsQuantity === 0 ||
+    sampleElementsQuantity === 0) {
     return 0;
   }
 
-  if (!isInteger(sample)) {
-    return 1 / getCombinationsCount(sampleSpace, choice);
+  if (!isInteger(sampleElementsQuantity)) {
+    return 1 / getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity);
   }
 
-  if ((isInteger(sample) && choice === 1)) {
-    return 1 / getCombinationsCount(sampleSpace, sample);
+  if ((isInteger(sampleElementsQuantity) && outcomeElementsQuantity === 1)) {
+    return 1 / getCombinationsQuantity(allElementsQuantity, sampleElementsQuantity);
   }
 
-  return (getCombinationsCount(sample, choice) *
-    getCombinationsCount(sampleSpace - choice, sample - choice)) /
-    getCombinationsCount(sampleSpace, sample);
+  return (getCombinationsQuantity(sampleElementsQuantity, outcomeElementsQuantity) *
+    getCombinationsQuantity(allElementsQuantity - outcomeElementsQuantity,
+      sampleElementsQuantity - outcomeElementsQuantity)) /
+    getCombinationsQuantity(allElementsQuantity, sampleElementsQuantity);
 }
 module.exports.getProbability = getProbability;
+console.log(getProbability(36, 2, 6));
 
 /**
- * Get combination count by sample space and sample size.
- * @param {!number} sampleSpace
- * @param {!number} sample
+ * Get combinations quantity by all elements quantity and outcome elements quantity.
+ * @param {!number} allElementsQuantity
+ * @param {!number} outcomeElementsQuantity
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeParamError}
  * @throws {СontradictoryParamsError}
  * @return {number}
  */
-function getCombinationsCount(sampleSpace, sample) {
-  if (!isInteger(sampleSpace) || !isInteger(sample)) {
+function getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity) {
+  if (!isInteger(allElementsQuantity) || !isInteger(outcomeElementsQuantity)) {
     throw OnlyIntegerAvailableError;
   }
 
-  if (sampleSpace < 0 || sample < 0) {
+  if (allElementsQuantity < 0 || outcomeElementsQuantity < 0) {
     throw NegativeParamError;
   }
 
-  if (sampleSpace < sample) {
+  if (allElementsQuantity < outcomeElementsQuantity) {
     throw СontradictoryParamsError;
   }
 
-  if (sampleSpace === 0 || sample === 0) {
+  if (allElementsQuantity === 0 || outcomeElementsQuantity === 0) {
     return 0;
   }
 
-  return getFactorial(sampleSpace, sample) / getFactorial(sample);
+  return getFactorial(allElementsQuantity, outcomeElementsQuantity) /
+    getFactorial(outcomeElementsQuantity);
 }
-module.exports.getCombinationsCount = getCombinationsCount;
+module.exports.getCombinationsCount = getCombinationsQuantity;

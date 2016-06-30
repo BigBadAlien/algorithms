@@ -12,9 +12,9 @@ var СontradictoryParamsError = new Error('Сontradictory params');
 module.exports.СontradictoryParamsError = СontradictoryParamsError;
 
 /**
- * Get factorial of number
+ * Get factorial of value.
  * @param {!number} value
- * @param {?number} loops Needs for partial fractal calculation.
+ * @param {?number} loops Needs for partial factorial calculation.
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeValueImpossibleError}
  * @throws {СontradictoryParamsError}

@@ -22,7 +22,7 @@ Just collection of algorithms.
 <a name="module_Math..getFactorial"></a>
 
 ### Math~getFactorial(value, loops) ⇒ <code>number</code>
-Get factorial of number
+Get factorial of value.
 
 **Kind**: inner method of <code>[Math](#module_Math)</code>  
 **Throws**:
@@ -35,20 +35,21 @@ Get factorial of number
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>number</code> |  |
-| loops | <code>number</code> | Needs for partial fractal calculation. |
+| loops | <code>number</code> | Needs for partial factorial calculation. |
 
 <a name="module_Probability"></a>
 
 ## Probability
 
 * [Probability](#module_Probability)
-    * [~getProbability(sampleSpace, choice, sample)](#module_Probability..getProbability) ⇒ <code>number</code>
-    * [~getCombinationsCount(sampleSpace, sample)](#module_Probability..getCombinationsCount) ⇒ <code>number</code>
+    * [~getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElementsQuantity)](#module_Probability..getProbability) ⇒ <code>number</code>
+    * [~getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity)](#module_Probability..getCombinationsQuantity) ⇒ <code>number</code>
 
 <a name="module_Probability..getProbability"></a>
 
-### Probability~getProbability(sampleSpace, choice, sample) ⇒ <code>number</code>
-Get probability by terms.
+### Probability~getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElementsQuantity) ⇒ <code>number</code>
+Get probability of outcome by terms.
+For example probability of outcome with 2 elements out of 36 with sample size 5 is 0.35714285714285715.
 
 **Kind**: inner method of <code>[Probability](#module_Probability)</code>  
 **Throws**:
@@ -60,14 +61,14 @@ Get probability by terms.
 
 | Param | Type |
 | --- | --- |
-| sampleSpace | <code>number</code> | 
-| choice | <code>number</code> | 
-| sample | <code>number</code> | 
+| allElementsQuantity | <code>number</code> | 
+| outcomeElementsQuantity | <code>number</code> | 
+| sampleElementsQuantity | <code>number</code> | 
 
-<a name="module_Probability..getCombinationsCount"></a>
+<a name="module_Probability..getCombinationsQuantity"></a>
 
-### Probability~getCombinationsCount(sampleSpace, sample) ⇒ <code>number</code>
-Get combination count by sample space and sample size.
+### Probability~getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity) ⇒ <code>number</code>
+Get combinations quantity by all elements quantity and outcome elements quantity.
 
 **Kind**: inner method of <code>[Probability](#module_Probability)</code>  
 **Throws**:
@@ -79,8 +80,8 @@ Get combination count by sample space and sample size.
 
 | Param | Type |
 | --- | --- |
-| sampleSpace | <code>number</code> | 
-| sample | <code>number</code> | 
+| allElementsQuantity | <code>number</code> | 
+| outcomeElementsQuantity | <code>number</code> | 
 
 <a name="module_Types"></a>
 
@@ -88,6 +89,9 @@ Get combination count by sample space and sample size.
 <a name="module_Types..isInteger"></a>
 
 ### Types~isInteger(value) ⇒ <code>boolean</code>
+Determines whether the passed value is an integer.
+Works like Number.isInteger.
+
 **Kind**: inner method of <code>[Types](#module_Types)</code>  
 
 | Param | Type |

@@ -1,6 +1,8 @@
 /** @module Types */
 
 /**
+ * Determines whether the passed value is an integer.
+ * Works like Number.isInteger.
  * @param {*} value
  * @return {boolean}
  */
