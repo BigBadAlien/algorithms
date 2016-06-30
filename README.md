@@ -2,6 +2,8 @@
 
 Just collection of algorithms.
 
+[![Coverage Status](https://coveralls.io/repos/bigbadalien/algorithms/badge.svg?branch=master)](https://coveralls.io/r/bigbadalien/algorithms?branch=master)
+
 ##API
 ## Modules
 
