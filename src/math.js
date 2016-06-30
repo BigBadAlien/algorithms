@@ -1,3 +1,5 @@
+/** @module Math */
+
 var isInteger = require('../src/types').isInteger;
 
 var NegativeValueImpossibleError = new Error('Negative value impossible');
@@ -12,7 +14,10 @@ module.exports.СontradictoryParamsError = СontradictoryParamsError;
 /**
  * Get factorial of number
  * @param {!number} value
- * @param {=number} loops Needs for partial fractal calculation.
+ * @param {?number} loops Needs for partial fractal calculation.
+ * @throws {OnlyIntegerAvailableError}
+ * @throws {NegativeValueImpossibleError}
+ * @throws {СontradictoryParamsError}
  * @return {number}
  */
 function getFactorial(value, loops) {

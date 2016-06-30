@@ -1,3 +1,5 @@
+/** @module Probability */
+
 var getFactorial = require('../src/math').getFactorial;
 var isInteger = require('../src/types').isInteger;
 
@@ -14,7 +16,10 @@ module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
  * Get probability by terms.
  * @param {!number} sampleSpace
  * @param {!number} choice
- * @param {=number} sample
+ * @param {?number} sample
+ * @throws {OnlyIntegerAvailableError}
+ * @throws {NegativeParamError}
+ * @throws {СontradictoryParamsError}
  * @return {number}
  */
 function getProbability(sampleSpace, choice, sample) {
@@ -60,6 +65,9 @@ module.exports.getProbability = getProbability;
  * Get combination count by sample space and sample size.
  * @param {!number} sampleSpace
  * @param {!number} sample
+ * @throws {OnlyIntegerAvailableError}
+ * @throws {NegativeParamError}
+ * @throws {СontradictoryParamsError}
  * @return {number}
  */
 function getCombinationsCount(sampleSpace, sample) {

@@ -1,3 +1,5 @@
+/** @module Types */
+
 /**
  * @param {*} value
  * @return {boolean}
