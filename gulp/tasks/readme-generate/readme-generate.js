@@ -4,7 +4,7 @@ var gulpJsdoc2md = require('gulp-jsdoc-to-markdown');
 var concat = require('gulp-concat');
 var handleErrors = require("../../utils/handleErrors.js");
 
-gulp.task('docs-generate', function () {
+gulp.task('readme-generate', function () {
   return gulp.src('./src/*.js')
     .pipe(concat('README.md'))
     .pipe(gulpJsdoc2md({template: fs.readFileSync(__dirname + '/README.hbs', 'utf8')}))
