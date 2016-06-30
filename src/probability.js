@@ -55,7 +55,6 @@ function getProbability(sampleSpace, choice, sample) {
     getCombinationsCount(sampleSpace, sample);
 }
 module.exports.getProbability = getProbability;
-console.log(getProbability(77, 5));
 
 /**
  * Get combination count by sample space and sample size.
