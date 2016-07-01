@@ -8,6 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "big-integer": "^1.6.15",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "gulp": "^3.9.1",
