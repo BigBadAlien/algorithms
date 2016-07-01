@@ -19,6 +19,11 @@ Just collection of algorithms.
 <a name="module_Math"></a>
 
 ## Math
+
+* [Math](#module_Math)
+    * [~getFactorial(value, loops)](#module_Math..getFactorial) ⇒ <code>number</code>
+    * [~isPrime(pow)](#module_Math..isPrime) ⇒ <code>boolean</code>
+
 <a name="module_Math..getFactorial"></a>
 
 ### Math~getFactorial(value, loops) ⇒ <code>number</code>
@@ -36,6 +41,17 @@ Get factorial of value.
 | --- | --- | --- |
 | value | <code>number</code> |  |
 | loops | <code>number</code> | Needs for partial factorial calculation. |
+
+<a name="module_Math..isPrime"></a>
+
+### Math~isPrime(pow) ⇒ <code>boolean</code>
+Determines whether the Mersenne number with passed power is an prime.
+
+**Kind**: inner method of <code>[Math](#module_Math)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pow | <code>number</code> | Power of Mersenne number. |
 
 <a name="module_Probability"></a>
 
