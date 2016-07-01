@@ -57,7 +57,14 @@ describe("Math", function () {
         expect(isPrime.bind(this, -521)).to.throw(OnlyNaturalNumberAvailableError);
       });
 
-      it("Should be return true if pass power of Mersenne prime", function() {
+      it("If value is not integer expected throwing", function () {
+        expect(isPrime.bind(this, '32')).to.throw(OnlyIntegerAvailableError);
+        expect(isPrime.bind(this, 'foobar', 36)).to.throw(OnlyIntegerAvailableError);
+        expect(isPrime.bind(this, true)).to.throw(OnlyIntegerAvailableError);
+        expect(isPrime.bind(this, Infinity)).to.throw(OnlyIntegerAvailableError);
+      });
+
+      it("Should be return true if passed power of Mersenne prime", function () {
         expect(isPrime(3)).to.be.true;
         expect(isPrime(5)).to.be.true;
         expect(isPrime(13)).to.be.true;
@@ -67,7 +74,7 @@ describe("Math", function () {
         expect(isPrime(607)).to.be.true;
       });
 
-      it("Should be return false if pass power of not Mersenne prime", function() {
+      it("Should be return false if passed power of not Mersenne prime", function () {
         expect(isPrime(4)).to.be.false;
         expect(isPrime(6)).to.be.false;
         expect(isPrime(18)).to.be.false;

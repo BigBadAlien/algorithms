@@ -75,7 +75,7 @@ function isPrimeBig(pow) {
   }
 
   return Lnum.isZero();
-};
+}
 
 /**
  * Determines whether the Mersenne number with passed power is an prime.
@@ -102,6 +102,10 @@ function isPrimeSmall(pow) {
  * @return {boolean}
  **/
 function isPrime(pow) {
+  if (!isInteger(pow)) {
+    throw OnlyIntegerAvailableError;
+  }
+
   if (pow <= 1) {
     throw OnlyNaturalNumberAvailableError;
   }
