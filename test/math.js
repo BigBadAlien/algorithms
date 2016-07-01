@@ -75,6 +75,7 @@ describe("Math", function () {
       });
 
       it("Should be return false if passed power of not Mersenne prime", function () {
+        expect(isPrime(1)).to.be.false;
         expect(isPrime(4)).to.be.false;
         expect(isPrime(6)).to.be.false;
         expect(isPrime(18)).to.be.false;
