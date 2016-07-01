@@ -106,7 +106,7 @@ function isPrime(pow) {
     throw OnlyIntegerAvailableError;
   }
 
-  if (pow <= 1) {
+  if (pow < 1) {
     throw OnlyNaturalNumberAvailableError;
   }
 
