@@ -16,6 +16,18 @@ Just collection of algorithms.
 <dd></dd>
 </dl>
 
+## Functions
+
+<dl>
+<dt><a href="#getThumbnailCropSize">getThumbnailCropSize(thumbWidth, thumbHeight, imgWidth, imgHeight)</a> ⇒ <code>Object</code></dt>
+<dd><p>Get required crop for further.
+Example of usage with GD:
+imageSrc.gravity(&#39;Center&#39;)
+.crop(cropWidth, cropHeight)
+.resize(thumbWidth, thumbHeight)</p>
+</dd>
+</dl>
+
 <a name="module_Math"></a>
 
 ## Math
@@ -113,4 +125,22 @@ Works like Number.isInteger.
 | Param | Type |
 | --- | --- |
 | value | <code>\*</code> | 
+
+<a name="getThumbnailCropSize"></a>
+
+## getThumbnailCropSize(thumbWidth, thumbHeight, imgWidth, imgHeight) ⇒ <code>Object</code>
+Get required crop for further.
+Example of usage with GD:
+imageSrc.gravity('Center')
+.crop(cropWidth, cropHeight)
+.resize(thumbWidth, thumbHeight)
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| thumbWidth |  | Width of desired thumbnail. |
+| thumbHeight |  | Height of desired thumbnail. |
+| imgWidth | <code>number</code> | Width of source image. |
+| imgHeight | <code>number</code> | Height of source image. |
 
