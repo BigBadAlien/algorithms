@@ -48,7 +48,7 @@ describe("Math", function () {
 
   describe("MersenneNumber", function() {
     describe("isPrime", function() {
-      it("If power is less than 1 integer expected throwing", function () {
+      it("If power is less than 1 expected throwing", function () {
         expect(isPrime.bind(this, 0)).to.throw(OnlyNaturalNumberAvailableError);
         expect(isPrime.bind(this, -1)).to.throw(OnlyNaturalNumberAvailableError);
         expect(isPrime.bind(this, -3)).to.throw(OnlyNaturalNumberAvailableError);
