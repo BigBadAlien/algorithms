@@ -29,6 +29,11 @@ imageSrc.gravity('Center')
 .resize(thumbWidth, thumbHeight)
 
 **Kind**: inner method of <code>[Image](#module_Image)</code>  
+**Throws**:
+
+- <code>OnlyIntegerAvailableError</code> 
+- <code>ThumbnailSizeMoreThanSourceImage</code> 
+
 
 | Param | Type | Description |
 | --- | --- | --- |

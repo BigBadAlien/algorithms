@@ -16,6 +16,8 @@ module.exports.ThumbnailSizeMoreThanSourceImage = ThumbnailSizeMoreThanSourceIma
  * @param {!number} thumbHeight Desired height of thumbnail.
  * @param {!number} imgWidth Width of source image.
  * @param {!number} imgHeight Height of source image.
+ * @throws {OnlyIntegerAvailableError}
+ * @throws {ThumbnailSizeMoreThanSourceImage}
  * @returns {{cropWidth: number, cropHeight: number}}
  */
 function getThumbnailCropSize(imgWidth, imgHeight, thumbWidth, thumbHeight) {
