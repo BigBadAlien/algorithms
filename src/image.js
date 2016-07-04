@@ -1,3 +1,5 @@
+/** @module Image */
+
 var OnlyIntegerAvailableError = new Error('Only integer available');
 module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
 
@@ -5,13 +7,13 @@ var ThumbnailSizeMoreThanSourceImage = new Error('Thumbnail size more than sourc
 module.exports.ThumbnailSizeMoreThanSourceImage = ThumbnailSizeMoreThanSourceImage;
 
 /**
- * Get required crop for further.
- * Example of usage with GD:
+ * Get required crop for further resize.
+ * Example of results usage with GD:
  * imageSrc.gravity('Center')
  * .crop(cropWidth, cropHeight)
  * .resize(thumbWidth, thumbHeight)
- * @param thumbWidth Width of desired thumbnail.
- * @param thumbHeight Height of desired thumbnail.
+ * @param {!number} thumbWidth Desired width of thumbnail.
+ * @param {!number} thumbHeight Desired height of thumbnail.
  * @param {!number} imgWidth Width of source image.
  * @param {!number} imgHeight Height of source image.
  * @returns {{cropWidth: number, cropHeight: number}}

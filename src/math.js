@@ -1,7 +1,6 @@
 /** @module Math */
 
 var BigInteger = require('big-integer/BigInteger');
-var isInteger = require('../src/types').isInteger;
 
 var NegativeValueImpossibleError = new Error('Negative value impossible');
 module.exports.NegativeValueImpossible = NegativeValueImpossibleError;
@@ -25,7 +24,7 @@ module.exports.OnlyNaturalNumberAvailableError = OnlyNaturalNumberAvailableError
  * @return {number}
  */
 function getFactorial(value, loops) {
-  if (!isInteger(value)) {
+  if (!Number.isInteger(value)) {
     throw OnlyIntegerAvailableError;
   }
 
@@ -33,20 +32,20 @@ function getFactorial(value, loops) {
     throw NegativeValueImpossibleError;
   }
 
-  if (isInteger(loops) && loops < 0) {
+  if (Number.isInteger(loops) && loops < 0) {
     throw NegativeValueImpossibleError;
   }
 
-  if (isInteger(loops) && loops > value) {
+  if (Number.isInteger(loops) && loops > value) {
     throw СontradictoryParamsError;
   }
 
   if (value == 0) {
     return 1;
   } else {
-    if (isInteger(loops) && loops > 1) {
+    if (Number.isInteger(loops) && loops > 1) {
       return (value * getFactorial(value - 1, loops - 1));
-    } else if (isInteger(loops) && loops === 1) {
+    } else if (Number.isInteger(loops) && loops === 1) {
       return value;
     } else {
       return (value * getFactorial(value - 1));
@@ -102,7 +101,7 @@ function isPrimeSmall(pow) {
  * @return {boolean}
  **/
 function isPrime(pow) {
-  if (!isInteger(pow)) {
+  if (!Number.isInteger(pow)) {
     throw OnlyIntegerAvailableError;
   }
 

@@ -1,7 +1,6 @@
 /** @module Probability */
 
 var getFactorial = require('../src/math').getFactorial;
-var isInteger = require('../src/types').isInteger;
 
 var СontradictoryParamsError = new Error();
 module.exports.СontradictoryParamsError = СontradictoryParamsError;
@@ -24,13 +23,13 @@ module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
  * @return {number}
  */
 function getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElementsQuantity) {
-  if (!isInteger(allElementsQuantity) || !isInteger(outcomeElementsQuantity)) {
+  if (!Number.isInteger(allElementsQuantity) || !Number.isInteger(outcomeElementsQuantity)) {
     throw OnlyIntegerAvailableError;
   }
 
   if (allElementsQuantity < 0 ||
     outcomeElementsQuantity < 0 ||
-    (isInteger(sampleElementsQuantity) && sampleElementsQuantity < 0)) {
+    (Number.isInteger(sampleElementsQuantity) && sampleElementsQuantity < 0)) {
     throw NegativeParamError;
   }
 
@@ -38,7 +37,7 @@ function getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElem
     throw СontradictoryParamsError;
   }
 
-  if (isInteger(sampleElementsQuantity) &&
+  if (Number.isInteger(sampleElementsQuantity) &&
     (sampleElementsQuantity < outcomeElementsQuantity || sampleElementsQuantity > allElementsQuantity)) {
     throw СontradictoryParamsError;
   }
@@ -49,11 +48,11 @@ function getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElem
     return 0;
   }
 
-  if (!isInteger(sampleElementsQuantity)) {
+  if (!Number.isInteger(sampleElementsQuantity)) {
     return 1 / getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity);
   }
 
-  if ((isInteger(sampleElementsQuantity) && outcomeElementsQuantity === 1)) {
+  if ((Number.isInteger(sampleElementsQuantity) && outcomeElementsQuantity === 1)) {
     return 1 / getCombinationsQuantity(allElementsQuantity, sampleElementsQuantity);
   }
 
@@ -75,7 +74,7 @@ console.log(getProbability(36, 2, 6));
  * @return {number}
  */
 function getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity) {
-  if (!isInteger(allElementsQuantity) || !isInteger(outcomeElementsQuantity)) {
+  if (!Number.isInteger(allElementsQuantity) || !Number.isInteger(outcomeElementsQuantity)) {
     throw OnlyIntegerAvailableError;
   }
 

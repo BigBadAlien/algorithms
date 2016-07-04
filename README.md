@@ -8,25 +8,34 @@ Just collection of algorithms.
 ## Modules
 
 <dl>
+<dt><a href="#module_Image">Image</a></dt>
+<dd></dd>
 <dt><a href="#module_Math">Math</a></dt>
 <dd></dd>
 <dt><a href="#module_Probability">Probability</a></dt>
 <dd></dd>
-<dt><a href="#module_Types">Types</a></dt>
-<dd></dd>
 </dl>
 
-## Functions
+<a name="module_Image"></a>
 
-<dl>
-<dt><a href="#getThumbnailCropSize">getThumbnailCropSize(thumbWidth, thumbHeight, imgWidth, imgHeight)</a> ⇒ <code>Object</code></dt>
-<dd><p>Get required crop for further.
-Example of usage with GD:
-imageSrc.gravity(&#39;Center&#39;)
+## Image
+<a name="module_Image..getThumbnailCropSize"></a>
+
+### Image~getThumbnailCropSize(thumbWidth, thumbHeight, imgWidth, imgHeight) ⇒ <code>Object</code>
+Get required crop for further resize.
+Example of results usage with GD:
+imageSrc.gravity('Center')
 .crop(cropWidth, cropHeight)
-.resize(thumbWidth, thumbHeight)</p>
-</dd>
-</dl>
+.resize(thumbWidth, thumbHeight)
+
+**Kind**: inner method of <code>[Image](#module_Image)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| thumbWidth | <code>number</code> | Desired width of thumbnail. |
+| thumbHeight | <code>number</code> | Desired height of thumbnail. |
+| imgWidth | <code>number</code> | Width of source image. |
+| imgHeight | <code>number</code> | Height of source image. |
 
 <a name="module_Math"></a>
 
@@ -110,37 +119,4 @@ Get combinations quantity by all elements quantity and outcome elements quantity
 | --- | --- |
 | allElementsQuantity | <code>number</code> | 
 | outcomeElementsQuantity | <code>number</code> | 
-
-<a name="module_Types"></a>
-
-## Types
-<a name="module_Types..isInteger"></a>
-
-### Types~isInteger(value) ⇒ <code>boolean</code>
-Determines whether the passed value is an integer.
-Works like Number.isInteger.
-
-**Kind**: inner method of <code>[Types](#module_Types)</code>  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-<a name="getThumbnailCropSize"></a>
-
-## getThumbnailCropSize(thumbWidth, thumbHeight, imgWidth, imgHeight) ⇒ <code>Object</code>
-Get required crop for further.
-Example of usage with GD:
-imageSrc.gravity('Center')
-.crop(cropWidth, cropHeight)
-.resize(thumbWidth, thumbHeight)
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| thumbWidth |  | Width of desired thumbnail. |
-| thumbHeight |  | Height of desired thumbnail. |
-| imgWidth | <code>number</code> | Width of source image. |
-| imgHeight | <code>number</code> | Height of source image. |
 
