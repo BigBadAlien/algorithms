@@ -1,8 +1,8 @@
-# algorithms
+# Kata
 
 Just collection of algorithms.
 
-[![Coverage Status](https://coveralls.io/repos/github/BigBadAlien/algorithms/badge.svg)](https://coveralls.io/github/BigBadAlien/algorithms)
+[![Coverage Status](https://coveralls.io/repos/github/BigBadAlien/kata/badge.svg)](https://coveralls.io/github/BigBadAlien/kata)
 
 ##API
 ## Modules
