@@ -1,4 +1,4 @@
-# Kata
+# algorithms
 
 Just collection of algorithms.
 
@@ -13,6 +13,8 @@ Just collection of algorithms.
 <dt><a href="#module_Math">Math</a></dt>
 <dd></dd>
 <dt><a href="#module_Probability">Probability</a></dt>
+<dd></dd>
+<dt><a href="#module_Random">Random</a></dt>
 <dd></dd>
 </dl>
 
@@ -60,7 +62,7 @@ Get factorial of value.
 
 - <code>OnlyIntegerAvailableError</code> 
 - <code>NegativeValueImpossibleError</code> 
-- <code>СontradictoryParamsError</code> 
+- <code>СontradictoryParamsErrorFactory</code> 
 
 
 | Param | Type | Description |
@@ -98,7 +100,7 @@ For example probability of outcome with 2 elements out of 36 with sample size 5 
 
 - <code>OnlyIntegerAvailableError</code> 
 - <code>NegativeParamError</code> 
-- <code>СontradictoryParamsError</code> 
+- <code>СontradictoryParamsErrorFactory</code> 
 
 
 | Param | Type |
@@ -117,11 +119,50 @@ Get combinations quantity by all elements quantity and outcome elements quantity
 
 - <code>OnlyIntegerAvailableError</code> 
 - <code>NegativeParamError</code> 
-- <code>СontradictoryParamsError</code> 
+- <code>СontradictoryParamsErrorFactory</code> 
 
 
 | Param | Type |
 | --- | --- |
 | allElementsQuantity | <code>number</code> | 
 | outcomeElementsQuantity | <code>number</code> | 
+
+<a name="module_Random"></a>
+
+## Random
+
+* [Random](#module_Random)
+    * [~isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep)](#module_Random..isEventHappenedFactory) ⇒ <code>function</code>
+    * [~getRandomInt(min, max)](#module_Random..getRandomInt) ⇒ <code>\*</code>
+
+<a name="module_Random..isEventHappenedFactory"></a>
+
+### Random~isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) ⇒ <code>function</code>
+Create function which distribute events by ranges.
+
+**Kind**: inner method of <code>[Random](#module_Random)</code>  
+**Throws**:
+
+- <code>OnlyIntegerAvailableError</code> 
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| attemptsSkip | <code>number</code> | First counts of attempts skipped. |
+| leftRangeStep | <code>number</code> |  |
+| rightRangeStep | <code>number</code> |  |
+
+<a name="module_Random..getRandomInt"></a>
+
+### Random~getRandomInt(min, max) ⇒ <code>\*</code>
+**Kind**: inner method of <code>[Random](#module_Random)</code>  
+**Throws**:
+
+- <code>СontradictoryParamsErrorFactory</code> 
+
+
+| Param | Type |
+| --- | --- |
+| min | <code>number</code> | 
+| max | <code>number</code> | 
 

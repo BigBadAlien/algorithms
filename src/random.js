@@ -1,3 +1,5 @@
+/** @module Random */
+
 var OnlyIntegerAvailableError = new Error('Only integer available');
 module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
 
