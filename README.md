@@ -139,6 +139,8 @@ Get combinations quantity by all elements quantity and outcome elements quantity
 
 ### Random~isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) ⇒ <code>function</code>
 Create function which distribute events by ranges.
+For example params (5,2,13) gives true onetime in ranges
+[6;14],[16,29],[31,44],[46,59],[61,74],[76,89]...
 
 **Kind**: inner method of <code>[Random](#module_Random)</code>  
 **Throws**:

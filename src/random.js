@@ -10,6 +10,8 @@ module.exports.СontradictoryParamsErrorFactory = СontradictoryParamsErrorFacto
 
 /**
  * Create function which distribute events by ranges.
+ * For example params (5,2,13) gives true onetime in ranges
+ * [6;14],[16,29],[31,44],[46,59],[61,74],[76,89]...
  * @param {!number} attemptsSkip First counts of attempts skipped.
  * @param {!number} leftRangeStep
  * @param {!number} rightRangeStep
@@ -55,11 +57,7 @@ function isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) {
       currentShowIndex = getRandomInt(leftRange, rightRange);
     }
 
-    if (current === currentShowIndex) {
-      return true;
-    }
-
-    return false;
+    return current === currentShowIndex;
   }
 }
 module.exports.isEventHappenedFactory = isEventHappenedFactory;
