@@ -22,6 +22,92 @@ describe("Random", function () {
       }
     });
 
+    it("Checking 5, 1, 13 arguments", function () {
+      for (var i = 1; i <= 1000; i++) {
+        var isEventHappened = isEventHappenedFactory(5, 2, 13);
+        var eventHappenedCounter = 0;
+        var attemptsCounter = 0;
+
+        for (var loops = 1; loops <= 5; loops++) {
+          attemptsCounter += 1;
+          expect(isEventHappened()).to.be.false;
+        }
+
+        while (attemptsCounter < 14) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(1);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+
+        while (attemptsCounter < 29) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(2);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+
+        while (attemptsCounter < 44) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(3);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+
+        while (attemptsCounter < 59) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(4);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+
+        while (attemptsCounter < 74) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(5);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+
+
+        while (attemptsCounter < 89) {
+          attemptsCounter += 1;
+          if (isEventHappened()) {
+            eventHappenedCounter += 1;
+          }
+        }
+
+        expect(eventHappenedCounter).to.equal(6);
+
+        attemptsCounter += 1;
+        expect(isEventHappened()).to.be.false;
+      }
+    });
+
     it("In order with 15 skipped attempts 2 steps of left range and 13 steps of right steps, during 100 expected 5 or 6 events", function () {
       var isEventHappend = isEventHappenedFactory(15, 2, 13);
       var eventHappenedCounter = 0;
@@ -49,7 +135,7 @@ describe("Random", function () {
     });
 
     it("Event must be happened exactly one time in range", function () {
-      for (var i = 1; i <= 1000; i++) {
+      for (var i = 1; i <= 10000; i++) {
         var attemptsCount = getRandomInt(100, 1000);
         var attemptsSkip = getRandomInt(0, 50);
         var leftRangeStep = getRandomInt(1, 10);
@@ -65,14 +151,10 @@ describe("Random", function () {
         }
 
         expect(eventHappenedCounter).to.be.oneOf([
-          Math.floor((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep - 1 )) / (leftRangeStep + rightRangeStep))
+          Math.floor((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep )) / (leftRangeStep + rightRangeStep))
           + ( rightRangeStep <= attemptsSkip ? 0 : 1 ),
-          ((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep - 1 )) / (leftRangeStep + rightRangeStep))
-          + ( rightRangeStep <= attemptsSkip || leftRangeStep === 1 ? 0 : 1 ),
-          Math.ceil((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep - 1 )) / (leftRangeStep + rightRangeStep))
-          + ( rightRangeStep <= attemptsSkip ? 0 : 1 ),
-          ((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep - 1 )) / (leftRangeStep + rightRangeStep))
-          + 1
+          Math.ceil((attemptsCount - ( rightRangeStep <= attemptsSkip ? attemptsSkip : rightRangeStep + leftRangeStep )) / (leftRangeStep + rightRangeStep))
+          + ( rightRangeStep <= attemptsSkip ? 0 : 1 )
         ]);
       }
     });
