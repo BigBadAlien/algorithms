@@ -21,19 +21,19 @@ function isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) {
     throw OnlyIntegerAvailableError;
   }
 
-  var currentPhotoCount = 0;
+  var current = 0;
   var leftRange = null;
   var rightRange = null;
   var currentShowIndex = null;
 
   return function () {
-    currentPhotoCount += 1;
-    if (currentPhotoCount <= attemptsSkip) {
+    current += 1;
+    if (current <= attemptsSkip) {
       return false;
     }
 
     if (leftRange === null) {
-      leftRange = currentPhotoCount;
+      leftRange = current;
     }
 
     if (rightRange === null) {
@@ -44,7 +44,7 @@ function isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) {
       }
     }
 
-    if (rightRange < currentPhotoCount) {
+    if (rightRange < current) {
       leftRange = rightRange + leftRangeStep;
       rightRange = leftRange + rightRangeStep;
     }
@@ -55,7 +55,7 @@ function isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) {
       currentShowIndex = getRandomInt(leftRange, rightRange);
     }
 
-    if (currentPhotoCount === currentShowIndex) {
+    if (current === currentShowIndex) {
       return true;
     }
 

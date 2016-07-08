@@ -135,7 +135,9 @@ describe("Random", function () {
     });
 
     it("Event must be happened exactly one time in range", function () {
-      for (var i = 1; i <= 10000; i++) {
+      this.timeout(10000);
+
+      for (var i = 1; i <= 1000; i++) {
         var attemptsCount = getRandomInt(100, 1000);
         var attemptsSkip = getRandomInt(0, 50);
         var leftRangeStep = getRandomInt(1, 10);
