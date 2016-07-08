@@ -2,13 +2,13 @@
 
 var getFactorial = require('../src/math').getFactorial;
 
-var СontradictoryParamsError = new Error();
+var СontradictoryParamsError = new Error('Contradictory parameters');
 module.exports.СontradictoryParamsError = СontradictoryParamsError;
 
-var NegativeParamError = new Error();
+var NegativeParamError = new Error('Negative value impossible');
 module.exports.NegativeParamError = NegativeParamError;
 
-var OnlyIntegerAvailableError = new Error();
+var OnlyIntegerAvailableError = new Error('Only integer available');
 module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
 
 /**
@@ -19,7 +19,7 @@ module.exports.OnlyIntegerAvailableError = OnlyIntegerAvailableError;
  * @param {?number} sampleElementsQuantity
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeParamError}
- * @throws {СontradictoryParamsError}
+ * @throws {СontradictoryParamsErrorFactory}
  * @return {number}
  */
 function getProbability(allElementsQuantity, outcomeElementsQuantity, sampleElementsQuantity) {
@@ -70,7 +70,7 @@ console.log(getProbability(36, 2, 6));
  * @param {!number} outcomeElementsQuantity
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeParamError}
- * @throws {СontradictoryParamsError}
+ * @throws {СontradictoryParamsErrorFactory}
  * @return {number}
  */
 function getCombinationsQuantity(allElementsQuantity, outcomeElementsQuantity) {

@@ -20,7 +20,7 @@ module.exports.OnlyNaturalNumberAvailableError = OnlyNaturalNumberAvailableError
  * @param {?number} loops Needs for partial factorial calculation.
  * @throws {OnlyIntegerAvailableError}
  * @throws {NegativeValueImpossibleError}
- * @throws {СontradictoryParamsError}
+ * @throws {СontradictoryParamsErrorFactory}
  * @return {number}
  */
 function getFactorial(value, loops) {
