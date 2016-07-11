@@ -16,7 +16,7 @@ module.exports.СontradictoryParamsErrorFactory = СontradictoryParamsErrorFacto
  * @param {!number} leftRangeStep
  * @param {!number} rightRangeStep
  * @throws {OnlyIntegerAvailableError}
- * @returns {Function}
+ * @return {Function}
  */
 function isEventHappenedFactory(attemptsSkip, leftRangeStep, rightRangeStep) {
   if (!Number.isInteger(attemptsSkip) || !Number.isInteger(leftRangeStep) || !Number.isInteger(rightRangeStep)) {
@@ -67,7 +67,7 @@ module.exports.isEventHappenedFactory = isEventHappenedFactory;
  * @param {number} min
  * @param {number} max
  * @throws {СontradictoryParamsErrorFactory}
- * @returns {*}
+ * @return {number}
  */
 function getRandomInt(min, max) {
   if (!Number.isInteger(min) || !Number.isInteger(max)) {
